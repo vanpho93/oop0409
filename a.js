@@ -30,6 +30,18 @@ function getArrSqr(arr) {
     return arrOutput;
 }
 
-console.log(getArrSqr(arrNum));
-console.log(getArrAge(arrPerson));
-console.log(getArrName(arrPerson));
+function map(arr, getNewValue) {
+    let arrOutput = [];
+    for(let i = 0; i < arr.length; i++) {
+        arrOutput.push(getNewValue(arr[i]));
+    }
+    return arrOutput;
+}
+
+console.log(map(arrNum, num => num * num));
+console.log(map(arrPerson, person => person.name));
+console.log(map(arrPerson, person => person.age));
+
+// console.log(getArrSqr(arrNum));
+// console.log(getArrAge(arrPerson));
+// console.log(getArrName(arrPerson));
