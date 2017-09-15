@@ -42,6 +42,16 @@ console.log(map(arrNum, num => num * num));
 console.log(map(arrPerson, person => person.name));
 console.log(map(arrPerson, person => person.age));
 
+function findIndex(arr, checkFunction) {
+    for(let i = 0; i < arr.length; i++) {
+        const dk = checkFunction(arr[i]);
+        if(dk) return i;
+    }
+    return -1;
+}
+
+console.log(findIndex(arrNum, i => i % 4 === 0));
+
 // console.log(getArrSqr(arrNum));
 // console.log(getArrAge(arrPerson));
 // console.log(getArrName(arrPerson));
